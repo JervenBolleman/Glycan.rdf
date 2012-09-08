@@ -1,0 +1,258 @@
+# baseURI: http://biohackathon.org/glycan
+# imports: http://purl.org/dc/terms/
+# imports: http://xmlns.com/foaf/0.1/
+
+@prefix :        <http://biohackathon.org/glycan#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://biohackathon.org/glycan>
+      rdf:type owl:Ontology ;
+      spin:imports <http://topbraid.org/spin/owlrl-all> , <http://topbraid.org/spin/rdfsplus> , <http://topbraid.org/spin/spinowl> ;
+      owl:imports <http://purl.org/dc/terms/> , foaf: ;
+      owl:versionInfo "2012.09.04"^^xsd:string .
+
+:aglycon
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:attachment_position
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "atom number in aglycon"^^xsd:string ;
+      rdfs:domain :aglycon ;
+      rdfs:range xsd:integer .
+
+:average_repeat_count
+      rdf:type owl:Class ;
+      rdfs:subClassOf :repeat_count .
+
+:biological_repeat_unit
+      rdf:type owl:Class ;
+      rdfs:subClassOf :repeat_unit .
+
+:chemical_modified
+      rdf:type owl:Class ;
+      rdfs:subClassOf :modified .
+
+:chemical_synthetic
+      rdf:type owl:Class ;
+      rdfs:subClassOf :synthetic .
+
+:chemoenzymatical_synthetic
+      rdf:type owl:Class ;
+      rdfs:subClassOf :synthetic .
+
+:contained_in
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Reference to another RDF resource with URI. The subject is a structurally defined motif, and the object is a glycan structure or motif."^^xsd:string .
+
+:count
+      rdf:type owl:DatatypeProperty .
+
+:cyclic_glycan
+      rdf:type owl:Class ;
+      rdfs:subClassOf :glycan .
+
+:degraded_by
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Subject is an enzyme, which degrades the object."^^xsd:string .
+
+:degraded_from
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Subject is a precursor of the term “degraded_by”"^^xsd:string .
+
+:enzymatical_modified
+      rdf:type owl:Class ;
+      rdfs:subClassOf :modified .
+
+:enzymatical_synthetic
+      rdf:type owl:Class ;
+      rdfs:subClassOf :synthetic .
+
+:exact_repeat_count
+      rdf:type owl:Class ;
+      rdfs:subClassOf :repeat_count .
+
+:generated_by
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Subject is an enzyme, which synthesize the object."^^xsd:string .
+
+:generated_from
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Subject is a precursor of the term “generated_by”"^^xsd:string .
+
+:glycan
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:glycan_database
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:glyco_sequence
+      rdf:type owl:Class ;
+      rdfs:subClassOf :sequence .
+
+:glycoconjugate_sequence
+      rdf:type owl:Class ;
+      rdfs:subClassOf :sequence .
+
+:has_affinity_to
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment """Subject is a material or organism, which has affinity to  the object. 
+"""^^xsd:string .
+
+:has_cardinality
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Number of occurrences of an element (e.g. a monosaccharide) in the subject. This information can be missing in case the cardinality cannot be defined (e.g. repeat units with unknown or under-defined repeats). Missing for non-stoichiometrical residues."^^xsd:string .
+
+:has_cardinality_per_repeat
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Number of occurrences of an element (e.g. a monosaccharide) in the repeat unit. Applicable to repeatUnits only. Missing for non-stoichiometrical residues."^^xsd:string ;
+      rdfs:domain :repeat_unit ;
+      rdfs:range xsd:integer .
+
+:has_component
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment """Reference to another subject in the document describing a part of the composition in detail.
+"""^^xsd:string .
+
+:has_epitope
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment """reference to another RDF resource with URI. The subject is a structural motif  with biological relevance; subclass of has_motif.
+"""^^xsd:string .
+
+:has_glycoconjugate_sequence
+      rdf:type owl:ObjectProperty .
+
+:has_glycosequence
+      rdf:type owl:ObjectProperty .
+
+:has_monosaccharide
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment """Reference to a RDF resource describing the monosaccharide.
+"""^^xsd:string .
+
+:has_motif
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment """reference to another RDF resource with URI. The object is a structurally defined motif 
+
+Eg. for Neo-lacto motif
+http://jcggdb.jp/idb/motif?id=JCGG-MOTIF3009.rdf
+inverse of ”contained_in”.
+should have sequence, composition, image ...
+"""^^xsd:string .
+
+:has_reference
+      rdf:type owl:ObjectProperty .
+
+:has_repeat_count
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain :repeat_unit ;
+      rdfs:range :repeat_count .
+
+:in_CSDB
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_carbohydrate_format .
+
+:in_Glyde11
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_carbohydrate_format .
+
+:in_IUPAC
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_carbohydrate_format .
+
+:in_IUPAC_condensed
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_IUPAC .
+
+:in_IUPAC_extended
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_IUPAC .
+
+:in_IUPAC_short
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_IUPAC .
+
+:in_KCF
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_carbohydrate_format .
+
+:in_SweetDB
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_carbohydrate_format .
+
+:in_carbohydrate_format
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :sequence ;
+      rdfs:range xsd:string .
+
+:in_glycan_database
+      rdf:type rdf:Property ;
+      rdfs:domain :glycan ;
+      rdfs:range :glycan_database .
+
+:in_glycoct
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_carbohydrate_format .
+
+:in_linearcode
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_carbohydrate_format .
+
+:in_linucs
+      rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :in_carbohydrate_format .
+
+:linkage
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "carbon number in glycan"^^xsd:string .
+
+:maximum_repeat_count
+      rdf:type owl:Class ;
+      rdfs:subClassOf :repeat_count .
+
+:minimum_repeat_count
+      rdf:type owl:Class ;
+      rdfs:subClassOf :repeat_count .
+
+:modified
+      rdf:type owl:Class ;
+      rdfs:label "modified glycan"^^xsd:string ;
+      rdfs:subClassOf :glycan .
+
+:natural
+      rdf:type owl:Class ;
+      rdfs:label "natural glycan"^^xsd:string ;
+      rdfs:subClassOf :glycan .
+
+:repeat_attribute
+      rdf:type owl:ObjectProperty .
+
+:repeat_count
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:repeat_unit
+      rdf:type owl:Class ;
+      rdfs:subClassOf :glycan .
+
+:sequence
+      rdf:type owl:Class ;
+      rdfs:subClassOf :glycan .
+
+:symbol_format
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment """The display style of the glycan.
+(cfg, uoxf, atoms)"""^^xsd:string ;
+      rdfs:domain foaf:Image .
+
+:synthetic
+      rdf:type owl:Class ;
+      rdfs:comment "including degradation products"^^xsd:string ;
+      rdfs:subClassOf :glycan .
