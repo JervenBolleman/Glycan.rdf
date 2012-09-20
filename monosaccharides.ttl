@@ -11,53 +11,95 @@
 
 <http://biohackathon.org/monosaccharides>
       rdf:type owl:Ontology ;
-      spin:imports <http://topbraid.org/spin/spinowl> , <http://topbraid.org/spin/rdfsplus> , <http://topbraid.org/spin/owlrl-all> ;
-      owl:imports <http://www.w3.org/2004/02/skos/core> , <http://purl.org/dc/terms/> ;
+      spin:imports <http://topbraid.org/spin/owlrl-all> , <http://topbraid.org/spin/rdfsplus> , <http://topbraid.org/spin/spinowl> ;
+      owl:imports <http://purl.org/dc/terms/> , <http://www.w3.org/2004/02/skos/core> ;
       owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+:CoreModification
+      rdf:type rdfs:Class ;
+      rdfs:comment """describes a core modification that is present in this basetype; 
+
+subnodes: -core_modification_type -modification_position"""^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+:Monosaccharide
+      rdf:type owl:Class ;
+      rdfs:comment ""^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+:MonosaccharideBasetype
+      rdf:type owl:Class ;
+      rdfs:comment ""^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
+
+:Substituent
+      rdf:type owl:Class ;
+      rdfs:comment ""^^xsd:string ;
+      rdfs:subClassOf owl:Thing .
 
 :anomeric
       rdf:type owl:ObjectProperty ;
       rdfs:comment "anomeric state of the basetype"^^xsd:string ;
+      rdfs:domain :MonosaccharideBasetype ;
       rdfs:range xsd:double .
 
 :average_MW
       rdf:type owl:DatatypeProperty ;
       rdfs:comment "literal numeric with decimal, calculated from monosaccharide composition with average atomic weight"^^xsd:string ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (:Monosaccharide :MonosaccharideBasetype)
+              ] ;
       rdfs:range xsd:double .
 
 :configuration
       rdf:type owl:ObjectProperty ;
-      rdfs:comment "absolute configuration of the basetype"^^xsd:string .
+      rdfs:comment "absolute configuration of the basetype"^^xsd:string ;
+      rdfs:domain :MonosaccharideBasetype .
 
 :ext_stereocode
-      rdf:type owl:ObjectProperty .
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :MonosaccharideBasetype ;
+      rdfs:range xsd:string .
 
 :has_basetype
       rdf:type owl:ObjectProperty ;
-      rdfs:comment "reference to another RDF resource with URI describing the monosaccharide basetype"^^xsd:string .
+      rdfs:comment "reference to another RDF resource with URI describing the monosaccharide basetype"^^xsd:string ;
+      rdfs:domain :Monosaccharide ;
+      rdfs:range :MonosaccharideBasetype .
 
 :has_composition
       rdf:type owl:ObjectProperty ;
-      rdfs:comment "lists element counts of the basetype, exact format to be determined"^^xsd:string .
+      rdfs:comment "lists element counts of the basetype, exact format to be determined"^^xsd:string ;
+      rdfs:domain :MonosaccharideBasetype .
 
 :has_core_modification
       rdf:type owl:ObjectProperty ;
       rdfs:comment """describes a core modification that is present in this basetype; 
 
-subnodes: -core_modification_type -modification_position"""^^xsd:string .
+subnodes: -core_modification_type -modification_position"""^^xsd:string ;
+      rdfs:domain :MonosaccharideBasetype ;
+      rdfs:range :CoreModification .
 
 :has_linking_position
       rdf:type owl:DatatypeProperty ;
       rdfs:comment "monosaccharide can be linked to other residues via standard glycosidic linkage at the given backbone position"^^xsd:string ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (:Monosaccharide :MonosaccharideBasetype)
+              ] ;
       rdfs:range xsd:integer .
 
 :has_substitution
       rdf:type owl:ObjectProperty ;
-      rdfs:comment "description of a substituent that is linked to this monosaccharide."^^xsd:string .
+      rdfs:comment "description of a substituent that is linked to this monosaccharide."^^xsd:string ;
+      rdfs:domain :Monosaccharide ;
+      rdfs:range :Substituent .
 
 :monoisotopic_MW
       rdf:type owl:DatatypeProperty ;
       rdfs:comment "literal numeric with decimal, calculated from monosaccharide composition with atomic weight of monoisotope."^^xsd:string ;
+      rdfs:domain :Monosaccharide ;
       rdfs:range xsd:double .
 
 :name
@@ -66,13 +108,19 @@ subnodes: -core_modification_type -modification_position"""^^xsd:string .
       rdfs:subPropertyOf rdfs:label .
 
 :ring_end
-      rdf:type owl:ObjectProperty .
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :MonosaccharideBasetype ;
+      rdfs:range xsd:int .
 
 :ring_start
-      rdf:type owl:ObjectProperty .
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :MonosaccharideBasetype ;
+      rdfs:range xsd:int .
 
 :ring_type
-      rdf:type owl:ObjectProperty .
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :MonosaccharideBasetype ;
+      rdfs:range xsd:string .
 
 :size
       rdf:type owl:DatatypeProperty ;
@@ -80,4 +128,6 @@ subnodes: -core_modification_type -modification_position"""^^xsd:string .
       rdfs:range xsd:integer .
 
 :stereocode
-      rdf:type owl:ObjectProperty .
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :MonosaccharideBasetype ;
+      rdfs:range xsd:string .
