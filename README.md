@@ -97,9 +97,9 @@ To have at least one of the sequence formats is mandatory.
   <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
   <tr><td>rdf:type</td>			<td>class</td>		<td>ChEBI (http://www.ebi.ac.uk/chebi/downloadsForward.do)</td></tr>
   <tr><td>foaf:name</td>			<td>xsd:string</td>	<td>trivial name</td></tr>
-  <tr><td>has_reference</td>		<td>blank node</td>	<td>see Reference</td></tr>
-  <tr><td>attachment_position</td>	<td>xsd:Integer</td>	<td>atom number in aglycon</td></tr>
-  <tr><td>linkage</td>			<td>xsd:Integer</td>	<td>carbon number in glycan</td></tr>
+  <tr><td>has_reference</td>		<td>Resource</td>	<td>see Reference</td></tr>
+  <tr><td>attachment_position</td>	<td>xsd:integer</td>	<td>atom number in aglycon</td></tr>
+  <tr><td>linkage</td>			<td>xsd:integer</td>	<td>carbon number in glycan</td></tr>
 </table>
 
 
@@ -107,27 +107,27 @@ has_repeat_count is applicable only if a structure encoded in the sequence IS a 
 ##Table 6. has_repeat_count node
 <table>
   <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
-  <tr><td>repeat_attribute</td>		<td>repeat</td>	<td>(min, max, exact, average, unknown) part of has_repeat_count blank node</td></tr>
-  <tr><td>repeat_count</td>		<td>xsd:integer</td>	<td>value of repeat_attribute in blank node  (use if it is known)</td></tr>
+  <tr><td>repeat_attribute</td>		<td>repeat</td>		<td>(min, max, exact, average, unknown) part of has_repeat_count resource</td></tr>
+  <tr><td>repeat_count</td>		<td>xsd:integer</td>	<td>value of repeat_attribute in resource  (use if it is known)</td></tr>
 </table>
 
-##Table 7. sequence formats property of the glyco:sequence blank node
+##Table 7. sequence formats property of the glyco:sequence resource
 <table>
 <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
 <tr><td>rdf:type</td>		<td>owl:class</td>	<td>sequence</td></tr>
-<tr><td>in_glycoct</td>		<td>xsd:String</td>	<td>plain literal string with the carbohydrate sequence in GlycoCT condensed format. GlycoCT sequence format is described in a reference <a href="http://www.ncbi.nlm.nih.gov/pubmed/18436199"/>18436199</a></td></tr>
-<tr><td>in_KCF</td>		<td>xsd:String</td>	<td>String with the carbohydrate sequence in KCF format.</td></tr>
-<tr><td>in_GlydeII</td>		<td>xsd:String</td>	<td>String with the carbohydrate sequence in Glyde-II format. </td></tr>
-<tr><td>in_linearCode</td>	<td>xsd:String</td>	<td>String with the carbohydrate sequence in LinearCode® format.</td></tr>
-<tr><td>in_linucs</td>		<td>xsd:String</td>	<td>String with the carbohydrate sequence in LINUCS format. </td></tr>
-<tr><td>in_IUPAC_condensed</td>	<td rowspan="3">xsd:String</td>	<td rowspan="3">String with carbohydrate sequence in IUPAC nomenclature. 
+<tr><td>in_glycoct</td>		<td>xsd:string</td>	<td>plain literal string with the carbohydrate sequence in GlycoCT condensed format. GlycoCT sequence format is described in a reference <a href="http://www.ncbi.nlm.nih.gov/pubmed/18436199"/>18436199</a></td></tr>
+<tr><td>in_KCF</td>		<td>xsd:string</td>	<td>String with the carbohydrate sequence in KCF format.</td></tr>
+<tr><td>in_GlydeII</td>		<td>xsd:string</td>	<td>String with the carbohydrate sequence in Glyde-II format. </td></tr>
+<tr><td>in_linearCode</td>	<td>xsd:string</td>	<td>String with the carbohydrate sequence in LinearCode® format.</td></tr>
+<tr><td>in_linucs</td>		<td>xsd:string</td>	<td>String with the carbohydrate sequence in LINUCS format. </td></tr>
+<tr><td>in_IUPAC_condensed</td>	<td rowspan="3">xsd:string</td>	<td rowspan="3">String with carbohydrate sequence in IUPAC nomenclature. 
 http://www.chem.qmul.ac.uk/iupac/
 http://www.chem.qmul.ac.uk/iupac/misc/glycp.html
 http://www.chem.qmul.ac.uk/iupac/misc/glylp.html</td></tr>
 <tr><td>in_IUPAC_short</td></tr>
 <tr><td>in_IUPAC_extended</td></tr>
-<tr><td>in_SweetDB</td>		<td>multiline String</td>	<td>String with carbohydrate sequence in Sweet-DB pseudographics.</td></tr>
-<tr><td>in_CSDB</td>		<td>xsd:String</td>	<td>String with sequence of residues in CSDB linear code
+<tr><td>in_SweetDB</td>		<td>xsd:string</td>	<td>Multiline  string with carbohydrate sequence in Sweet-DB pseudographics.</td></tr>
+<tr><td>in_CSDB</td>		<td>xsd:string</td>	<td>String with sequence of residues in CSDB linear code
 http://csdb.glycoscience.ru/bacterial/core/help.php?db=bacterial&amp;topic=rules</td></tr>
 </table>
 
@@ -168,7 +168,7 @@ databases of  glycan database https://docs.google.com/document/d/1xy3N7Njsm0EO9f
 ##Table 8. Describing a glycan database
 <table>
 <tr><td>is_glycan_database</td>		<td>Resource</td>	<td>URI (Range is glyco:glycan_database class )</td></tr>
-<tr><td>dcterms:identifier</td>		<td>xsd:String</td>	<td>entry ID in other resource</td></tr>
+<tr><td>dcterms:identifier</td>		<td>xsd:string</td>	<td>entry ID in other resource</td></tr>
 <tr><td>rdfs:seeAlso</td>		<td>Resource</td>	<td>URI Reference to other resource can be used as subject for further annotation (resource_name and resource_id)</td></tr>
 <tr><td>owl:sameAs</td>			<td>Resource</td>	<td>URI Reference to another RDF description of exactly this carbohydrate provided by a different resource which may contain complementary information</td></tr>
 </table>
@@ -242,8 +242,8 @@ The following table contains information about links to graphical representation
 <table>
   <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
   <tr><td>has_image</td><td>Resource</td><td>URL of image</td></tr>
-  <tr><td>dc:format</td><td>xsd:String</td><td>The file format of the image. (image/svg+xml, image/png, image/gif, …)</td></tr>
-  <tr><td>symbol_format</td><td>xsd:String or Resource</td><td>URL to explanation of symbol? The display style of the glycan. (cfg, uoxf, atoms)</td></tr>
+  <tr><td>dc:format</td><td>xsd:string</td><td>The file format of the image. (image/svg+xml, image/png, image/gif, …)</td></tr>
+  <tr><td>symbol_format</td><td>xsd:string or Resource</td><td>URL to explanation of symbol? The display style of the glycan. (cfg, uoxf, atoms)</td></tr>
 </table>
 
 ```
@@ -262,8 +262,8 @@ Turtle example:
 <table>
   <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
   <tr><td>has_component</td>	<td>Resource</td>	<td>Reference to another subject in the document describing a part of the composition in detail.</td></tr>
-  <tr><td>has_cardinality</td>	<td>xsd:Integer</td>	<td>Number of occurrences of an element (e.g. a monosaccharide) in the subject. This information can be missing in case the cardinality cannot be defined (e.g. repeat units with unknown or under-defined repeats). Missing for non-stoichiometrical residues.</td></tr>
-  <tr><td>has_cardinality_per_repeat</td>	<td>xsd:Integer</td>	<td>Number of occurrences of an element (e.g. a monosaccharide) in the repeat unit. Applicable to repeatUnits only. Missing for non-stoichiometrical residues.</td></tr>
+  <tr><td>has_cardinality</td>	<td>xsd:integer</td>	<td>Number of occurrences of an element (e.g. a monosaccharide) in the subject. This information can be missing in case the cardinality cannot be defined (e.g. repeat units with unknown or under-defined repeats). Missing for non-stoichiometrical residues.</td></tr>
+  <tr><td>has_cardinality_per_repeat</td>	<td>xsd:integer</td>	<td>Number of occurrences of an element (e.g. a monosaccharide) in the repeat unit. Applicable to repeatUnits only. Missing for non-stoichiometrical residues.</td></tr>
   <tr><td>has_monosaccharide</td>	<td>Resource</td><td>Reference to a RDF resource describing the monosaccharide.</td></tr>
 </table>
 
@@ -321,7 +321,7 @@ name
 
 <table>
   <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
-  <tr><td>name</td>			<td>xsd:String</td>	<td>MsDB name of the monosaccharide</td></tr>
+  <tr><td>name</td>			<td>xsd:string</td>	<td>MsDB name of the monosaccharide</td></tr>
   <tr><td>has_basetype</td>		<td>Resource</td>	<td>reference to another RDF resource with URI describing the monosaccharide basetype</td></tr>
   <tr><td>has_substituent</td>		<td>Resource</td>	<td>reference to another RDF resource with URI. The substituent is linked to the basetype in this monosaccharide.</td></tr>
   <tr><td>average_MW</td>		<td>xsd:double</td>	<td>literal numeric with decimal, calculated from monosaccharide composition with average atomic weight</td></tr>
@@ -335,8 +335,8 @@ name
   <tr><td>configuration</td>		<td>Resource</td>	<td>D, L, unknown, none (URI for concept to be provided. absolute configuration of the basetype</td></tr>
   <tr><td>ring_start</td>		<td>xsd:integer</td>	<td>position of first carbon involved in ring closure</td></tr>
   <tr><td>ring_end</td>			<td>xsd:integer</td>	<td>position of second carbon involved in ring closure</td></tr>
-  <tr><td>stereocode</td>		<td>xsd:String</td>	<td>Stereocode describing the backbone stereochemistry</td></tr>
-  <tr><td>ext_stereocode</td>		<td>xsd:String</td>	<td>Extended stereocode of the basetype</td></tr>
+  <tr><td>stereocode</td>		<td>xsd:string</td>	<td>Stereocode describing the backbone stereochemistry</td></tr>
+  <tr><td>ext_stereocode</td>		<td>xsd:string</td>	<td>Extended stereocode of the basetype</td></tr>
   <tr><td>has_composition</td>		<td></td><td></td></tr>
   <tr><td>has_core_modification</td>	<td>Resource</td>	<td>reference to another RDF describing a core modification that is present in this basetype</td></tr>
 </table>
