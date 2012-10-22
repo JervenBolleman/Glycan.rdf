@@ -212,22 +212,22 @@ glyco:is_glycan_database <http://purl.jp/bio/12/database/glycosciences.de>;  dct
 These are URLs of databases that may be referenced. [?id?] placeholder for database internal id
 <table>
   <tr><th>Database name</th><th>Description</th><th>URL template</th></tr>
-  <tr><td>ccsd</td><td>Web link to a CarbBank entry about this carbohydrate. </td><td>http://www.genome.jp/dbget-bin/www_bget?carbbank+[?id?]</td></tr>
-  <tr><td>glycomedb</td><td>Web link to a GlycomeDB entry about this carbohydrate.</td><td>http://www.glycome-db.org/database/showStructure.action?glycomeId=[?id?]</td></tr>
-  <tr><td>jcggdb</td><td>Web link to a JCGGDB entry about this carbohydrate.</td><td>http://jcggdb.jp/idb/jcggdb/[?id?]</td></tr>
-  <tr><td>kegg_glycan</td><td>Web link to a KEGG Glycan entry about this carbohydrate.</td><td>http://www.genome.jp/dbget-bin/www_bget?gl:[?id?]</td></tr>
-  <tr><td>cfg</td><td>Web link to a CFG entry about this carbohydrate.</td><td>http://www.functionalglycomics.org/glycomics/CarbohydrateServlet?pageType=view&view=view&operationType=view&carbId=[?id?]&sideMenu=no%0A%20%20%09%09</td></tr>
-  <tr><td>glyaffinity</td><td>Web link to a GlyAffinity entry about this carbohydrate.</td><td>http://worm.mpi-cbg.de/affinity/structure.action?ID=[?id?]</td></tr>
-  <tr><td>glycobase_lille</td><td>Web link to a GlycoBase(Lille) entry about this carbohydrate.</td><td>http://glycobase.univ-lille1.fr/base/view_mol.php?id=[?id?]</td></tr>
-  <tr><td>glycosciences.de</td><td>Web link to a GLYCOSCIENCES.de entry about this carbohydrate.</td><td>http://www.glycosciences.de/sweetdb/start.php?action=explore_linucsid&linucsid=[?id?]&show=1#struct%0A%20%20%09%09</td></tr>
-  <tr><td>PDB</td><td>Web link to a PDB entry about this carbohydrate.</td><td>http://www.rcsb.org/pdb/explore/explore.do?structureId=[?id?]</td></tr>
-  <tr><td>unicarbkb</td><td>Web link to a UniCarbKB entry about this carbohydrate.</td><td>http://unicarbkb.org/structure/:[?id?]</td></tr>
-  <tr><td>bcsdb</td><td>Web link to a BCSDB entry about this carbohydrate.</td><td>http://csdb.glycoscience.ru/bacterial/core/search_id.php?id_list=[?id?]</td></tr>
-  <tr><td>glyco</td><td></td><td></td></tr>
-  <tr><td>glycobase_dublin</td><td>(Registration is required)</td><td></td></tr>
-  <tr><td>unicarbdb</td><td>Web link to a UniCarb-DB entry about this carbohydrate.</td><td>http://unicarb-db.biomedicine.gu.se/unicarbdb/show_glycan.action?glycanSequenceId=[?id?]</td></tr>
-  <tr><td>eurocarbdb-ebi</td><td>Web link to a EuroCarbDB (EBI) entry about this carbohydrate.</td><td>http://www.ebi.ac.uk/eurocarb/show_glycan.action?glycanSequenceId=[?id?]</td></tr>
-  <tr><td>eurocarbdb-nibrt</td><td><td><td></td></tr>
+  <tr><td>ccsd</td>		<td>Web link to a CarbBank entry about this carbohydrate. </td><td>http://www.genome.jp/dbget-bin/www_bget?carbbank+[?id?]</td></tr>
+  <tr><td>glycomedb</td>	<td>Web link to a GlycomeDB entry about this carbohydrate.</td><td>http://www.glycome-db.org/database/showStructure.action?glycomeId=[?id?]</td></tr>
+  <tr><td>jcggdb</td>		<td>Web link to a JCGGDB entry about this carbohydrate.</td><td>http://jcggdb.jp/idb/jcggdb/[?id?]</td></tr>
+  <tr><td>kegg_glycan</td>	<td>Web link to a KEGG Glycan entry about this carbohydrate.</td><td>http://www.genome.jp/dbget-bin/www_bget?gl:[?id?]</td></tr>
+  <tr><td>cfg</td>		<td>Web link to a CFG entry about this carbohydrate.</td>	<td>http://www.functionalglycomics.org/glycomics/CarbohydrateServlet?pageType=view&view=view&operationType=view&carbId=[?id?]&sideMenu=no%0A%20%20%09%09</td></tr>
+  <tr><td>glyaffinity</td>	<td>Web link to a GlyAffinity entry about this carbohydrate.</td><td>http://worm.mpi-cbg.de/affinity/structure.action?ID=[?id?]</td></tr>
+  <tr><td>glycobase_lille</td>	<td>Web link to a GlycoBase(Lille) entry about this carbohydrate.</td><td>http://glycobase.univ-lille1.fr/base/view_mol.php?id=[?id?]</td></tr>
+  <tr><td>glycosciences.de</td>	<td>Web link to a GLYCOSCIENCES.de entry about this carbohydrate.</td>			<td>http://www.glycosciences.de/sweetdb/start.php?action=explore_linucsid&linucsid=[?id?]&show=1#struct%0A%20%20%09%09</td></tr>
+  <tr><td>PDB</td>		<td>Web link to a PDB entry about this carbohydrate.</td><td>http://www.rcsb.org/pdb/explore/explore.do?structureId=[?id?]</td></tr>
+  <tr><td>unicarbkb</td>	<td>Web link to a UniCarbKB entry about this carbohydrate.</td><td>http://unicarbkb.org/structure/:[?id?]</td></tr>
+  <tr><td>bcsdb</td>		<td>Web link to a BCSDB entry about this carbohydrate.</td><td>http://csdb.glycoscience.ru/bacterial/core/search_id.php?id_list=[?id?]</td></tr>
+  <tr><td>glyco</td>		<td></td>	<td></td></tr>
+  <tr><td>glycobase_dublin</td>	<td>(Registration is required)</td><td></td></tr>
+  <tr><td>unicarbdb</td>	<td>Web link to a UniCarb-DB entry about this carbohydrate.</td><td>http://unicarb-db.biomedicine.gu.se/unicarbdb/show_glycan.action?glycanSequenceId=[?id?]</td></tr>
+  <tr><td>eurocarbdb-ebi</td>	<td>Web link to a EuroCarbDB (EBI) entry about this carbohydrate.</td><td>http://www.ebi.ac.uk/eurocarb/show_glycan.action?glycanSequenceId=[?id?]</td></tr>
+  <tr><td>eurocarbdb-nibrt</td>	<td></td>	<td></td></tr>
 </table>
 
 databases of  glycan database https://docs.google.com/document/d/1xy3N7Njsm0EO9fjjp3GC-wuDG3TPcUGQnGPdltp0YpI/edit
