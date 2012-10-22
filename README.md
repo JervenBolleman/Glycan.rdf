@@ -173,7 +173,7 @@ databases of  glycan database https://docs.google.com/document/d/1xy3N7Njsm0EO9f
 <tr><td>owl:sameAs</td>			<td>Resource</td>	<td>URI Reference to another RDF description of exactly this carbohydrate provided by a different resource which may contain complementary information</td></tr>
 </table>
 
-``text/turtle
+```text/turtle
 @prefix glyco:   <http://purl.jp/bio/12/> .
 @prefix glycodb:   <http://purl.jp/bio/12/database> .
 
