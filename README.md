@@ -211,7 +211,7 @@ glyco:is_glycan_database <http://purl.jp/bio/12/database/glycosciences.de>;  dct
 ###List of existing Glycan databse URI's
 These are URLs of databases that may be referenced. [?id?] placeholder for database internal id
 <table>
-  <tr><th>Database name</th><th>Description<th><th>URL template</th></tr>
+  <tr><th>Database name</th><th>Description</th><th>URL template</th></tr>
   <tr><td>ccsd</td><td>Web link to a CarbBank entry about this carbohydrate. </td><td>http://www.genome.jp/dbget-bin/www_bget?carbbank+[?id?]</td></tr>
   <tr><td>glycomedb</td><td>Web link to a GlycomeDB entry about this carbohydrate.</td><td>http://www.glycome-db.org/database/showStructure.action?glycomeId=[?id?]</td></tr>
   <tr><td>jcggdb</td><td>Web link to a JCGGDB entry about this carbohydrate.</td><td>http://jcggdb.jp/idb/jcggdb/[?id?]</td></tr>
