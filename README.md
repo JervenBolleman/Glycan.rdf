@@ -292,7 +292,7 @@ Turtle example:
                 glyco:has_monosaccharide
                         "http://www.monosaccharidedb.org/query_monosaccharide_by_name.action?scheme=msdb&name=b-dgal-HEX-1:5"
               ] .
-``
+```
 
 # Biological source
 
