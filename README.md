@@ -395,8 +395,8 @@ prefix faldo: <http://biohackathon.org/faldo> .
   <tr><td>has_core_protein</td>		<td>uniprotcore:Protein</td> 	<td>Uniprot identifier for glycoprotein entry</td></tr>
  </table>
  
- ## Protein description in UniProt namespace
- <table>
+## Protein description in UniProt namespace
+<table>
   <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
   <tr><td>rdf:type</td>			<td>uniprotcore:Protein</td>	<td>The type of this resource is uniprot Protein. The uri of the resource should be in the uniprot namespace.</td></tr>
   <tr><td>uniprot:sequence</td>		<td>uniprot:Sequence</td>	<td>The uniprot record can contain multiple sequences we need to be specific about which one</td></tr>
