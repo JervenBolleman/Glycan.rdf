@@ -378,25 +378,51 @@ Turtle example:
 
 #Namespace or Vocabularies for Describing GlycoProtein
 
-```
-prefix, uniprotcore:http://purl.uniprot.org/core/
-```
+When describing a GlycoProtein we aim at possible integration with UniProtKB provided information.
+This is why the GlycoProtein description fits into the UniProtKB rdf structure.
 
-https://docs.google.com/spreadsheet/ccc?key=0Ajw2OqykvyGLdG9FOHN4ZENYZmpVVkhCYmZFc3dwX3c#gid=2
+The uniprot schema can be viewed at <a href="http://purl.uniprot.org/core/">uniprot.org core</a>.
+Faldo for positional data can be viewed at <a href="https://github.com/JervenBolleman/FALDO/faldo">Github FALDO</a>
 
+```
+prefix uniprot: <http://purl.uniprot.org/core/> .
+prefix faldo: <http://biohackathon.org/faldo> .
+```
+## GlycoProtein description in glyco namespace.
 <table>
   <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
   <tr><td>rdf:type</td>			<td>Resource</td>	<td>Description</td></tr>
   <tr><td>has_core_protein</td>		<td>uniprotcore:Protein</td> 	<td>Uniprot identifier for glycoprotein entry</td></tr>
-  <tr><td>amino_acid_length</td>	<td></td> 	<td>From relevant uniprot page or stated if sequenced/synthesised</td></tr>
-  <tr><td>amino_acid_sequence</td>	<td></td>	<td></td></tr>
-  <tr><td>versionOf</td>		<td></td>	<td></td></tr>
+ </table>
+ 
+ ## Protein description in UniProt namespace
+ <table>
+  <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
+  <tr><td>rdf:type</td>			<td>uniprotcore:Protein</td>	<td>The type of this resource is uniprot Protein. The uri of the resource should be in the uniprot namespace.</td></tr>
+  <tr><td>uniprot:sequence</td>		<td>uniprot:Sequence</td>	<td>The uniprot record can contain multiple sequences we need to be specific about which one</td></tr>
+  <tr><td>uniprot:annotation</td>	<td>uniprot:Annotation</td>	<td>While any uniprot annotation type can be linked. Glycosylation_Annotation is the expected type</td></tr>
+</table>
+Note: in case the protein is not available in UniProt e.g. because it is synthetic you can add use any non UniProt URI as long as it points to a resource describing the protein.
+## Amino acid sequence description in UniProt namespace
+<table>
+  <tr><th>predicate</th>		<th>data type</th>		<th>comment</th></tr>
+  <tr><td>rdf:type</td>			<td>uniprot:Sequence</td>	<td>Any kind of amino acid sequence can go here.</td></tr>
+  <tr><td>rdf:Value</td>		<td>xsd:String</td>		<td>String of AminoAcid IUPAC codes.</td></tr>
+  <tr><td>uniprot:version</td>		<td>xsd:int</td>		<td>Sequence version number (changes when gene models change etc...).</td></tr>
+  <tr><td>uniprot:md5Checksum</td>	<td>xsd:String</td>		<td>Checksum for error detection only.</td></tr>
+  <tr><td>uniprot:length</td>		<td>xsd:int</td>		<td>Length of the sequence in amino acids.</td></tr>
+</table>
+
+## Glycosylation_Annotation description in UniProt namespace
+<table>
+  <tr><th>predicate</th>		<th>data type</th>	<th>comment</th></tr>
+  <tr><td>rdf:type</td>			<td>uniprot:Glycosylation_Annotation (or uniprot:Annotation)</td><td>Normally for this standard expect only Glycosylation_Annotation</td></tr>
   <tr><td>has_glycosylated_amino_acid_residue</td>	<td>Resource</td>	<td>use UUID if URI not available</td></tr>
-  <tr><td>position_of_amino_acid</td>	<td>xsd:int</td>	<td>property of “has_glycosylated_amino_acid_residue”, Amino acid position</td></tr>
+  <tr><td>faldo:position</td>		<td>faldo:Position</td>			<td>use on of the Faldo position types to describe which amino acid has been glycosylated.</td></tr>
   <tr><td>amino_acid_type</td>		<td>Resource</td>	<td>Link to definition of amino acid residue. property of “has_glycosylated_amino_acid_residue”, type of amino acid residue, usually N or S/T</td></tr>
   <tr><td>modification_type</td>	<td>Resource</td>	<td>property of “has_glycosylated_amino_acid_residue” The object is referenced to list below.</td>
   <tr><td>has_structure</td>		<td>Resouce</td>	<td>URI of structure associated with glycoprotein (predicate can occur multiple times)</td>
-  <tr><td>evidence</td></tr>
+  <tr><td>uniprot:evidence</td> 	<td>Resource</td>	<td>Preferably use the evidence code ontology</td></tr>
   <tr><td>contributor</td></tr>
 </table>
 
